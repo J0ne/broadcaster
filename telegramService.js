@@ -6,32 +6,9 @@ const telegramBotService = (function () {
   let bot = new TelegramBot(
     process.env.TELEGRAM_BOT_TOKEN,
     {
-      polling: true,
+      polling: false,
     }
   );
-
-  bot.onText(/\/rooms/, (msg) => {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "Wait a sec... My algorithm is slow...", {
-      parse_mode: "HTML",
-    });
-  });
-
-  // Matches "/echo [whatever]"
-  bot.onText(/\/echo (.+)/, (msg, match) => {
-    // 'msg' is the received Message from Telegram
-    // 'match' is the result of executing the regexp above on the text content
-    // of the message
-    const chatId = msg.chat.id;
-    console.log("Got a message! chatid", chatId);
-    const resp = match[1]; // the captured "whatever"
-    // send back the matched "whatever" to the chat
-    bot.sendMessage(
-      chatId,
-      `Received your message! ${msg.from.username} said ${resp}`,
-      { parse_mode: "HTML" }
-    );
-  });
 
   return {
     sendMessage: (chatId, message) => {
