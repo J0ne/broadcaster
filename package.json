@@ -1,0 +1,27 @@
+{
+  "name": "broadcaster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0ne/broadcaster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J0ne/broadcaster/issues"
+  },
+  "homepage": "https://github.com/J0ne/broadcaster#readme",
+  "dependencies": {
+    "nats": "^2.4.0",
+    "node-telegram-bot-api": "^0.56.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
